@@ -3,6 +3,7 @@ package com.alef.seriesflux.service;
 import com.alef.seriesflux.entities.Serie;
 import com.alef.seriesflux.repositories.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
