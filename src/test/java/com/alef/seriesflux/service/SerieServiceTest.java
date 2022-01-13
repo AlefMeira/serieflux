@@ -7,14 +7,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.*;
+import org.mockito.ArgumentMatchers;
+import org.mockito.BDDMockito;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 class SerieServiceTest {
@@ -36,8 +36,6 @@ class SerieServiceTest {
         BDDMockito.when(serieService.create(SerieCreator.createSerieToBeSaved())).thenReturn(Mono.just(serie));
 
         BDDMockito.when(serieService.delete(ArgumentMatchers.anyString())).thenReturn(Mono.empty());
-
-
     }
 
     @Test
